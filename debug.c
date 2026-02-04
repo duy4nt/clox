@@ -13,7 +13,7 @@ void disassembleChunk(Chunk* chunk, const char* name) {
 static int constantInstruction(const char* name, Chunk* chunk, int offset) {
     uint8_t constant = chunk->code[offset + 1];
     printf("%-16s %4d'", name, constant);
-    printfValue(chunk->constant.value[constant]);
+    printValue(chunk->constants.value[constant]);
     printf("'\n");
     return offset + 2;
 }
@@ -28,7 +28,7 @@ int disassembleInstruction(Chunk* chunk, int offset) {
     printf("%04d", offset);
     if (offset > 0 && chunk-> lines[offset] == chunk->lines[offset - 1]) {
         printf("    | ");
-    } esle {
+    } else {
         printf("%4d ", chunk->lines[offset]);
     }
 

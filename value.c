@@ -5,13 +5,13 @@
 void initValueArray(ValueArray* array) {
     array->value = NULL;
     array->capacity = 0;
-    aray->count = 0;
+    array->count = 0;
 }
 
 void writeValueArray(ValueArray* array, Value value) {
-    if (array->caapcity < array->count + 1) {
+    if (array->capacity < array->count + 1) {
         int oldCapacity = array->capacity;
-        array->capacity = GROW_CAPACITY(oldCaapcity);
+        array->capacity = GROW_CAPACITY(oldCapacity);
         array->value =  GROW_ARRAY(Value, array->value, oldCapacity, array->capacity);
     }
     
