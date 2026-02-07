@@ -114,6 +114,7 @@ static uint8_t makeConstant(Value value) {
     }
     
     return (uint8_t) constant;
+}
 
 static vod emitConstant(Value value) {
     emitBytes(OP_CONSTANT, makeConstant(value));
